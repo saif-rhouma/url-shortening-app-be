@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "62c7827b-d42b-43ee-b735-57684cd42fe3",
+		"name": "URL shortening service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25484531"
+	},
+	"item": [
+		{
+			"name": "Create Short Url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\":\"https://www.npmjs.com/package/qrcode\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Qr Code Image",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/qr/eDtIoImLtq",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"qr",
+						"eDtIoImLtq"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get URL Details",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/eDtIoImLtq",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"eDtIoImLtq"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All URLs Details",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Visit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/visit/eDtIoImLtq",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"visit",
+						"eDtIoImLtq"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
