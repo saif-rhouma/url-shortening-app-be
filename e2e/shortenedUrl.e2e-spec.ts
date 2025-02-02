@@ -17,7 +17,7 @@ describe('ShortenedUrlController E2E Tests', () => {
     app = server.getApp();
 
     // Setup: create a shortened URL before tests
-    const response = await request(app).post('/api/').send({ url: 'http://example.com' });
+    const response = await request(app).post('/api/').send({ url: 'https://github.com/saif-rhouma/' });
 
     shortCode = response.body.shortCode;
     createdUrl = response.body;
@@ -30,7 +30,7 @@ describe('ShortenedUrlController E2E Tests', () => {
 
   describe('POST /api/', () => {
     it('should create a shortened URL and return it', async () => {
-      const response = await request(app).post('/api/').send({ url: 'http://example.com' });
+      const response = await request(app).post('/api/').send({ url: 'https://github.com/saif-rhouma/' });
 
       expect(response.status).toBe(HTTP_CODE.Created);
       expect(response.body).toHaveProperty('shortCode');

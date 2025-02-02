@@ -21,8 +21,8 @@ describe('serializeDto', () => {
 
   it('should exclude extra fields that are not in the DTO class', () => {
     const data = {
-      name: 'Jane Doe',
-      age: 25,
+      name: 'Saifeddine RHOUMA',
+      age: 34,
       extraField: 'extra value',
     };
 

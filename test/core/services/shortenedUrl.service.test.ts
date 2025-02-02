@@ -13,7 +13,7 @@ jest.mock('../../../src/core/repositories/shortenedUrl.repository', () => ({
 
 describe('ShortenedUrlService', () => {
   beforeEach(() => {
-    jest.clearAllMocks(); // Clear mock data before each test
+    jest.clearAllMocks();
   });
 
   describe('create', () => {
@@ -37,9 +37,8 @@ describe('ShortenedUrlService', () => {
   describe('findByCode', () => {
     it('should return the result if found', async () => {
       const shortCode = 'abc123';
-      const mockResponse = { code: shortCode, url: 'http://example.com' };
+      const mockResponse = { shortCode: shortCode, originalUrl: 'https://github.com/saif-rhouma/' };
 
-      // Mock the repository findByCode method
       (shortenedUrlRepository.findByCode as jest.Mock).mockResolvedValue(mockResponse);
 
       const result = await ShortenedUrlService.findByCode(shortCode);
@@ -51,7 +50,6 @@ describe('ShortenedUrlService', () => {
     it('should throw NotFoundException if not found', async () => {
       const shortCode = 'nonexistent';
 
-      // Mock the repository findByCode method to return null
       (shortenedUrlRepository.findByCode as jest.Mock).mockResolvedValue(null);
 
       await expect(ShortenedUrlService.findByCode(shortCode)).rejects.toThrow(
@@ -63,11 +61,10 @@ describe('ShortenedUrlService', () => {
   describe('findAll', () => {
     it('should return all shortened URLs', async () => {
       const mockResponse = [
-        { code: 'abc123', url: 'http://example1.com' },
-        { code: 'xyz456', url: 'http://example2.com' },
+        { shortCode: 'eDtIoImLtq', originalUrl: 'https://www.npmjs.com/package/qrcode' },
+        { shortCode: 'xyz456', originalUrl: 'https://github.com/saif-rhouma/' },
       ];
 
-      // Mock the repository findAll method
       (shortenedUrlRepository.findAll as jest.Mock).mockResolvedValue(mockResponse);
 
       const result = await ShortenedUrlService.findAll();
@@ -80,9 +77,8 @@ describe('ShortenedUrlService', () => {
   describe('findForVisit', () => {
     it('should return the updated result if found', async () => {
       const shortCode = 'abc123';
-      const mockResponse = { code: shortCode, url: 'http://example.com', visits: 1 };
+      const mockResponse = { shortCode: shortCode, originalUrl: 'https://github.com/saif-rhouma/', visits: 1 };
 
-      // Mock the repository updateVisit method
       (shortenedUrlRepository.updateVisit as jest.Mock).mockResolvedValue(mockResponse);
 
       const result = await ShortenedUrlService.findForVisit(shortCode);
@@ -94,7 +90,6 @@ describe('ShortenedUrlService', () => {
     it('should throw NotFoundException if not found', async () => {
       const shortCode = 'nonexistent';
 
-      // Mock the repository updateVisit method to return null
       (shortenedUrlRepository.updateVisit as jest.Mock).mockResolvedValue(null);
 
       await expect(ShortenedUrlService.findForVisit(shortCode)).rejects.toThrow(
