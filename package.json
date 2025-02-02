@@ -78,5 +78,13 @@
     "@configs": "build/src/configs/",
     "@utils": "build/src/utils/",
     "@tsTypes": "build/src/types/"
+  },
+  "lint-staged": {
+    "*.(t|j)s": [
+      "npm run format",
+      "npm run lint",
+      "git add .",
+      "npm run test"
+    ]
   }
 }
