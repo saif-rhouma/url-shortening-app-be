@@ -130,4 +130,4 @@ dist
 .pnp.*
 
 # Uploaded Test files
-src/uploads/*
+src/public/*
