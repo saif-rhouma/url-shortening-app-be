@@ -1,0 +1,10 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "moduleFileExtensions": ["ts", "js"],
+  "testMatch": ["**/e2e/**/*.e2e-spec.ts"],
+  "setupFiles": ["<rootDir>/src/configs/index.ts"],
+  "transform": {
+    "^.+\\.ts$": "ts-jest"
+  }
+}

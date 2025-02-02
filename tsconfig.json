@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "es6" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "experimentalDecorators": true /* Enable experimental support for legacy experimental decorators. */,
+    "emitDecoratorMetadata": true /* Emit design-type metadata for decorated declarations in source files. */,
+    "module": "commonjs" /* Specify what module code is generated. */,
+    "moduleResolution": "node" /* Specify how TypeScript looks up a file from a given module specifier. */,
+    "baseUrl": "./" /* Specify the base directory to resolve non-relative module names. */,
+    "paths": {
+      // "src/*": ["./src/*"],
+      "@configs/*": ["./src/configs/*"]
+      // "@constants/*": ["./src/core/constants/*"], // points to the source folder
+      // "@utils/*": ["./src/utils/*"],
+      // "@tsTypes/*": ["./src/types/*"]
+    } /* Specify a set of entries that re-map imports to additional lookup locations. */,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ] /* Specify multiple folders that act like './node_modules/@types'. */,
+    "resolveJsonModule": true /* Enable importing .json files. */,
+    "outDir": "./dist" /* Specify an output folder for all emitted files. */,
+    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+    "strict": true /* Enable all strict type-checking options. */,
+    "noImplicitAny": false /* Enable error reporting for expressions and declarations with an implied 'any' type. */,
+    "strictPropertyInitialization": false /* Check for class properties that are declared but not set in the constructor. */,
+    "noUnusedLocals": true /* Enable error reporting when local variables aren't read. */,
+    "noUnusedParameters": true /* Raise an error when a function parameter isn't read. */,
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build"]
+}
